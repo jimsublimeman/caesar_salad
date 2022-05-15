@@ -30,9 +30,9 @@ print(new_logo)
 
 #Start a while loop here 
 # call the right arguments to pass back into encrypt or decrypt and fix modulo shit
-program_end = False
+program_running = True
 
-while not program_end:
+while program_running:
     direction = input("Type 'encode' to encrypt your message or 'decode' to decrypt:\n")
     text = input("Type your message here:\n").lower()
     shift = int(input("State the number of characters to shift by:\n"))
@@ -44,3 +44,6 @@ while not program_end:
         decrypt(scrambled_text = text, shift_number = shift)
     else:
         print("Sorry, please type 'encode' or 'decode' to use the cipher.")
+    user_input = input('To continue, press any key. To exit, press "e". ')
+    if user_input == 'e':
+        program_running = False
